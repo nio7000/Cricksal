@@ -1,0 +1,342 @@
+:root {
+  --primary-color: #00ffcc;
+  --primary-hover: #00cc99;
+  --secondary-color: #009973;
+  --accent-color: #e74c3c;
+  --text-color: #222;
+  --light-text: #fff;
+  --dark-bg: #2c3e50;
+  --light-bg: #ecf0f1;
+  --border-radius: 10px;
+  --box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: var(--text-color);
+}
+
+/* Hero Section Styling */
+.hero-section {
+  background: url('../resources/images/system/Indoor Cricket Background.jpg') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease;
+  max-width: 800px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Header */
+.hero-content h1 {
+  color: var(--light-text);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #00ffcc, #00cc99);
+  border-radius: 2px;
+}
+
+/* Error Message */
+.error-message {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-left: 4px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Form Container Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 800px;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+.row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Controls */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #444;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+input:focus, select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 255, 204, 0.2);
+  outline: none;
+}
+
+.col:hover label {
+  color: #00796b;
+}
+
+input[type="file"] {
+  padding: 0.5rem 0;
+  border: none;
+  background: transparent;
+}
+
+/* Buttons */
+.buttons-row {
+  margin-top: 1.5rem;
+  justify-content: space-between;
+}
+
+button.submit-button {
+  width: 100%;
+  padding: 14px 25px;
+  background: linear-gradient(90deg, #00ffcc, #00cc99);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0, 204, 153, 0.3);
+  flex: 1;
+  margin-right: 1rem;
+}
+
+button.submit-button:hover {
+  background: linear-gradient(90deg, #00cc99, #009973);
+  color: white;
+  box-shadow: 0 6px 15px rgba(0, 204, 153, 0.4);
+  transform: translateY(-2px);
+}
+
+button.submit-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 204, 153, 0.4);
+}
+
+a.login-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  flex: 1;
+  background: linear-gradient(90deg, #009973, #00796b);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 121, 107, 0.3);
+}
+
+a.login-button:hover {
+  background: linear-gradient(90deg, #00796b, #005a50);
+  box-shadow: 0 6px 15px rgba(0, 121, 107, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Animation for Form */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+form {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Input file styling */
+input[type="file"]::file-selector-button {
+  background: var(--primary-color);
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: var(--transition);
+  font-weight: bold;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: var(--primary-hover);
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .overlay {
+    padding: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .buttons-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  button.submit-button {
+    margin-right: 0;
+  }
+}
+
+/* Fancy Input Field Effects */
+.col {
+  position: relative;
+}
+
+input:focus + .focus-border,
+select:focus + .focus-border {
+  transform: scaleX(1);
+  transition: var(--transition);
+}
+
+/* Form Feedback Icons */
+.col {
+  position: relative;
+}
+
+.col::after {
+  font-family: "Font Awesome 6 Free";
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.col input:valid ~ i {
+  content: "\f058";
+  color: var(--secondary-color);
+  opacity: 1;
+}
+
+.col input:invalid:not(:placeholder-shown) ~ i {
+  content: "\f057";
+  color: var(--accent-color);
+  opacity: 1;
+}
+
+/* Profile Picture Upload Styling */
+input[type="file"] {
+  font-size: 0.9rem;
+}
+
+input[type="file"]::file-selector-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: var(--transition);
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: var(--primary-hover);
+}

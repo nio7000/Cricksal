@@ -1,0 +1,232 @@
+:root {
+--primary-color: #00ffcc;
+--primary-hover: #00cc99;
+--secondary-color: #009973;
+--accent-color: #e74c3c;
+--text-color: #222;
+--light-text: #fff;
+--dark-bg: #2c3e50;
+--light-bg: #ecf0f1;
+--border-radius: 10px;
+--box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+--transition: all 0.3s ease;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f8f8f8;
+color: var(--text-color);
+}
+/* Page Container with Background */
+.login-container {
+background: url('../resources/images/system/Indoor Cricket Background.jpg') no-repeat center center/cover;
+height: 100vh;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+}
+.overlay {
+background-color: rgba(0, 0, 0, 0.6);
+width: 100%;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+/* Login Box Styling */
+.login-box {
+background-color: rgba(255, 255, 255, 0.9);
+backdrop-filter: blur(10px);
+border-radius: var(--border-radius);
+box-shadow: var(--box-shadow);
+padding: 2.5rem;
+width: 100%;
+max-width: 450px;
+transform: translateY(0);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+border: 1px solid rgba(255, 255, 255, 0.2);
+animation: fadeIn 0.8s ease-out forwards;
+}
+.login-box:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+}
+/* Header */
+.login-box h2 {
+color: var(--text-color);
+font-size: 2rem;
+margin-bottom: 1.5rem;
+text-align: center;
+position: relative;
+padding-bottom: 15px;
+}
+.login-box h2::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 80px;
+height: 4px;
+background: linear-gradient(90deg, #00ffcc, #00cc99);
+border-radius: 2px;
+}
+/* Error Message */
+.error-message {
+background-color: rgba(231, 76, 60, 0.1);
+border-left: 4px solid var(--accent-color);
+color: var(--accent-color);
+padding: 1rem;
+margin-bottom: 1.5rem;
+border-radius: var(--border-radius);
+font-size: 0.9rem;
+animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+@keyframes shake {
+10%, 90% { transform: translate3d(-1px, 0, 0); }
+20%, 80% { transform: translate3d(2px, 0, 0); }
+30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+/* Form Structure */
+form {
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+}
+.row {
+display: flex;
+gap: 1.5rem;
+margin-bottom: 0.5rem;
+width: 100%;
+}
+.col {
+flex: 1;
+display: flex;
+flex-direction: column;
+position: relative;
+}
+/* Form Controls */
+label {
+display: block;
+margin-bottom: 8px;
+color: #444;
+font-weight: 500;
+font-size: 0.95rem;
+transition: color 0.3s ease;
+}
+input {
+width: 100%;
+padding: 14px;
+border: 2px solid #e0e0e0;
+border-radius: 10px;
+box-sizing: border-box;
+font-family: inherit;
+font-size: 1rem;
+transition: all 0.3s ease;
+background-color: rgba(255, 255, 255, 0.9);
+}
+input:focus {
+border-color: var(--primary-color);
+box-shadow: 0 0 0 3px rgba(0, 255, 204, 0.2);
+outline: none;
+}
+.col:hover label {
+color: #00796b;
+}
+/* Buttons */
+.login-button {
+width: 100%;
+padding: 14px 25px;
+background: linear-gradient(90deg, #00ffcc, #00cc99);
+color: #000;
+font-weight: bold;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+transition: all 0.3s ease;
+font-size: 1.1rem;
+box-shadow: 0 4px 10px rgba(0, 204, 153, 0.3);
+}
+.login-button:hover {
+background: linear-gradient(90deg, #00cc99, #009973);
+color: white;
+box-shadow: 0 6px 15px rgba(0, 204, 153, 0.4);
+transform: translateY(-2px);
+}
+.login-button:active {
+transform: translateY(1px);
+box-shadow: 0 2px 5px rgba(0, 204, 153, 0.4);
+}
+.forgot-button, .register-button {
+display: block;
+width: 100%;
+text-align: center;
+padding: 12px;
+border-radius: 10px;
+text-decoration: none;
+transition: all 0.3s ease;
+font-weight: 600;
+margin-top: 10px;
+}
+.forgot-button {
+background: linear-gradient(90deg, #e0e0e0, #d0d0d0);
+color: #444;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.forgot-button:hover {
+background: linear-gradient(90deg, #d0d0d0, #c0c0c0);
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+transform: translateY(-2px);
+}
+.register-button {
+background: linear-gradient(90deg, #009973, #00796b);
+color: white;
+box-shadow: 0 4px 10px rgba(0, 121, 107, 0.3);
+}
+.register-button:hover {
+background: linear-gradient(90deg, #00796b, #005a50);
+box-shadow: 0 6px 15px rgba(0, 121, 107, 0.4);
+transform: translateY(-2px);
+}
+/* Animations */
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+/* Form Feedback Icons */
+.col::after {
+font-family: "Font Awesome 6 Free";
+position: absolute;
+right: 12px;
+top: 38px;
+pointer-events: none;
+opacity: 0;
+transition: var(--transition);
+}
+.col input:valid ~ i {
+content: "\f058";
+color: var(--secondary-color);
+opacity: 1;
+}
+.col input:invalid:not(:placeholder-shown) ~ i {
+content: "\f057";
+color: var(--accent-color);
+opacity: 1;
+}
+/* Responsive Design */
+@media (max-width: 500px) {
+.login-box {
+width: 90%;
+padding: 1.5rem;
+}
+.login-box h2 {
+font-size: 1.75rem;
+}
+input, .login-button, .forgot-button, .register-button {
+padding: 12px;
+}
+}
